@@ -1,0 +1,36 @@
+server:
+  port: 8099
+
+spring:
+  application:
+    name: ostara-demo
+  jackson:
+    default-property-inclusion: NON_NULL
+    serialization:
+      fail-on-empty-beans: false
+  main:
+    allow-bean-definition-overriding: true
+
+# INFO ENDPOINT CONFIGURATION
+info:
+  app:
+   name: 'ostara-demo'
+   description: 'Integration of Ostara with Springboot application.'
+   version: "0.0.1-SNAPSHOT"
+   build-date: '2023-12-20T07:38:17Z'
+   encoding: "UTF-8"
+   java:
+    version: "17.0.9"
+
+management:
+  endpoints:
+    web:
+      base-path: /management
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+  info:
+    env:
+      enabled: true
